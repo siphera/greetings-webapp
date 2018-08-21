@@ -1,0 +1,75 @@
+.greet-h1 {
+    text-align: center;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+td {
+    font-weight: bold;
+}
+
+.output {
+    text-align: center;
+}
+
+.box {
+    padding: 0.75em;
+    border-radius: 0.5em;
+    border: 1px solid #ddd;
+    height: auto;
+    margin-bottom: 1em;
+    box-shadow: 10px 10px #5a5858;
+}
+
+.greetings {
+    background-color: aqua;
+}
+
+.counter {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.language {}
+
+.greetingIMG {
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.greetIMG {
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.outputRes {
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 2px 2px 8px aqua;
+}
+
+footer {
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
