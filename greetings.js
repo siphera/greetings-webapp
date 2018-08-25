@@ -1,72 +1,59 @@
-module.exports = function (data) {
-    let greetedNames = {};
-    let name = "";
-    let lang = "";
+ module.exports = function greetingsLogic() {
+     let greetedNames = {};
+     let greeting = "";
+     let Name = "";
 
-    function setName(value) {
-        if (value !== " ") {
-            name = value;
-        }
-    }
+     let logic = function (language, Name) {
+         let name = Name.toUpperCase();
 
-    function setLanguage(value) {
-        lang = value;
-    }
+         if (name != "") {
 
-    function setGreetedNames() {
-        if (data) {
-            greetedNames = data;
-        }
-        if (name !== "") {
-            if (greetedNames[name] === undefined) {
-                greetedNames[name] = 0;
-            }
-        }
-    }
+             if (greetedNames[name] === undefined) {
 
-    function greetLogic() {
-        if (lang === "english") {
-            return "Hello, " + name;
+                 greetedNames[name] = 0;
 
-        } else if (lang === "afrikaans") {
-            return "Hallo, " + name;
+             }
 
-        }
-        if (lang === "isixhosa") {
-            return "Molo, " + name;
-        }
-    }
+         }
 
-    function getName() {
-        return name;
-    }
 
-    function getLanguage() {
-        return lang;
-    }
+         if (language === 'isixhosa') {
+             greeting = "Molo, " + Name;
+         }
+         if (language === 'afrikaans') {
 
-    function getGreetedNames() {
-        return greetedNames;
-    }
+             greeting = "hallo, " + Name;
 
-    function resetGreetedNames() {
-        return greetedNames = {};
-    }
+         }
+         if (language === 'english') {
+             greeting = "Hello, " + Name;
+         }
+         return greeting;
+     }
 
-    function namesCounter() {
-        return Object.keys(greetedNames).length;
-    }
+     function mygreeting() {
+         return greeting;
+     }
 
-    return {
-        setName,
-        setLanguage,
-        resetGreetedNames,
-        setGreetedNames,
-        getName,
-        getGreetedNames,
-        greetLogic,
-        getGreetedNames,
-        namesCounter
+     function myCounter() {
+         return Object.entries(greetedNames).length;
 
-    }
-}
+     }
+
+     function reset() {
+
+         greetedNames = {};
+         greeting = "";
+         Name = "";
+
+     }
+
+     return {
+         mygreeting,
+         logic,
+         myCounter,
+         reset
+
+     }
+
+ }

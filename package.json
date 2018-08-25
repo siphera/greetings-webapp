@@ -1,7 +1,7 @@
 {
   "name": "greetings-webapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "creating a ",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -11,8 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "eslint": "^5.4.0",
     "express": "^4.16.3",
+    "express-flash": "0.0.2",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
     "mocha": "^5.2.0"
   }
 }

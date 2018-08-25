@@ -6,10 +6,11 @@
 
 <div class="row">
     <div class="twelve columns">
-        <label>Your Name</label>
-        <input class="ten columns nameInputField" type="text" placeholder="Enter your name here!" onkeyup="rmvNumChar(this)" required>
+        <form class="" action="/greetings" method="post">
+            <label>Your Name</label>
+            <input class="ten columns nameInputField Name" type="text" name="Name" placeholder="Enter your name here!" required>
 
-        <span class="counter one column">0</span>
+            <span class="counter one column">{{counter}}</span>
     </div>
 </div>
 
@@ -45,30 +46,35 @@
 <br>
 <div class="row">
     <div class="twelve columns">
-        <button class="button-primary six columns greetBtn" type="button" name="button">Greet Me</button>
-
-        <button class="button-primary six columns clearBtn" type="button" name="button">Clear</button>
+        <button class="button-primary six columns greetBtn" name="button">Greet</button>
+        
     </div>
 </div>
+</form>
+<form class="" action="/reset" method="post">
+    <button class="button-primary six columns clearBtn" name="button">Clear</button>
+</form>
 
 <div class="row">
     <div class="twelve columns">
         <div class="output">
-            <span class="outputRes">enter name</span>
+            <span class="outputRes">{{greet}}</span>
         </div>
-        <!--                <span class="output">Your output will show here!!!</span>-->
+        {{#if messages.info}}
+        <div class="entry">
+            <p> {{messages.info}}</p>
+        </div>
+        {{/if}}
     </div>
 
 </div>
 
-
-
 </div>
 
-<div class="row">
+{{!-- <div class="row">
     <div class="twelve columns">
         <footer>
-            <p>Copyright by Siphenkosi Salman &copy; 2018</p>
+            <p>Developed by Siphenkosi Salman &copy; 2018</p>
         </footer>
     </div>
-</div>
+</div> --}}
