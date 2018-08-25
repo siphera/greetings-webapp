@@ -1,20 +1,19 @@
 <div class="row">
     <div class="twelve columns greetings">
-        <h1 class="greet-h1">GREETINGS</h1>
+        <h1 class="greet-h1">GREETINGS <span class="counter">{{counter}}</span></h1>
     </div>
 </div>
 
 <div class="row">
     <div class="twelve columns">
-         {{#if messages.info}}
+        {{#if messages.info}}
         <div class="entry">
             <p class="flash"> {{messages.info}}</p>
         </div>
         {{/if}}
         <form class="" action="/greetings" method="post">
             <input class="ten columns nameInputField Name" type="text" name="Name" placeholder="Enter your name here!" required>
-
-            <span class="counter one column">{{counter}}</span>
+            <button class="button-primary two columns greetBtn" name="button">Greet</button>
     </div>
 </div>
 
@@ -48,15 +47,10 @@
 </div>
 
 <br>
-<div class="row">
-    <div class="twelve columns">
-        <button class="button-primary six columns greetBtn" name="button">Greet</button>
-        
-    </div>
-</div>
+
 </form>
 <form class="" action="/reset" method="post">
-    <button class="button-primary six columns clearBtn" name="button">Clear</button>
+    <button class="button-primary twelve columns clearBtn" name="button">RESET</button>
 </form>
 
 <div class="row">
@@ -64,14 +58,15 @@
         <div class="output">
             <span class="outputRes">{{greet}}</span>
         </div>
-        
+
     </div>
 
 </div>
 
 </div>
 
-{{!-- <div class="row">
+{{!--
+<div class="row">
     <div class="twelve columns">
         <footer>
             <p>Developed by Siphenkosi Salman &copy; 2018</p>

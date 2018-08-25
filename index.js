@@ -51,13 +51,13 @@ app.post('/greetings', function(req, res) {
   const language = req.body.language;
 
   greetings.logic(language, Name);
+  req.flash('info', 'name greeted');
 
 
   if (Name === '' || language == null) {
     req.flash('info', 'Please Enter a Name and Select a Language !')
   } else {
     greetings.logic(language, Name);
-    // let  Set.myCounter() = 0;
   }
 
   res.redirect('/');
@@ -66,6 +66,7 @@ app.post('/greetings', function(req, res) {
 
 app.post('/reset', function (req, res) {
     greetings.reset();
+   req.flash('info', 'Everything has been reseted');
     res.redirect('/');
 });
 

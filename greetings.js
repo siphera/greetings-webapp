@@ -3,7 +3,7 @@
      let greeting = "";
      let Name = "";
 
-     let logic = function (language, Name) {
+     let logic = (language, Name) => {
          let name = Name.toUpperCase();
 
          if (name != "") {
@@ -35,13 +35,9 @@
          return greeting;
      }
 
-     function myCounter() {
-         return Object.entries(greetedNames).length;
+     let myCounter = () => Object.entries(greetedNames).length;
 
-     }
-
-     function reset() {
-
+     let reset = () => {
          greetedNames = {};
          greeting = "";
          Name = "";
