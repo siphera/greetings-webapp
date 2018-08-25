@@ -6,8 +6,12 @@
 
 <div class="row">
     <div class="twelve columns">
+         {{#if messages.info}}
+        <div class="entry">
+            <p class="flash"> {{messages.info}}</p>
+        </div>
+        {{/if}}
         <form class="" action="/greetings" method="post">
-            <label>Your Name</label>
             <input class="ten columns nameInputField Name" type="text" name="Name" placeholder="Enter your name here!" required>
 
             <span class="counter one column">{{counter}}</span>
@@ -60,11 +64,7 @@
         <div class="output">
             <span class="outputRes">{{greet}}</span>
         </div>
-        {{#if messages.info}}
-        <div class="entry">
-            <p> {{messages.info}}</p>
-        </div>
-        {{/if}}
+        
     </div>
 
 </div>
