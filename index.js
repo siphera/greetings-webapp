@@ -50,7 +50,9 @@ app.post('/greetings', function (req, res) {
     const Name = req.body.Name;
     const language = req.body.language;
 
-    if (Name === '') {
+    if (Name === '' && language == null) {
+        req.flash('info', 'Please enter a name and choose a language');
+    } else if (Name === '') {
         req.flash('info', 'Please enter a name');
     } else if (language == null) {
         req.flash('info', 'Please choose a language');
