@@ -44,29 +44,27 @@ app.get('/', function (req, res) {
     });
 });
 
-app.post('/greetings', function(req, res) {
+app.post('/greetings', function (req, res) {
 
 
-  const Name = req.body.Name;
-  const language = req.body.language;
+    const Name = req.body.Name;
+    const language = req.body.language;
 
-  greetings.logic(language, Name);
-  req.flash('info', 'name greeted');
+    if (Name === '') {
+        req.flash('info', 'Please enter a name');
+    } else if (language == null) {
+        req.flash('info', 'Please choose a language');
+    } else {
+        greetings.logic(language, Name);
+        req.flash('info', 'Name greeted');
+    }
 
-
-  if (Name === '' || language == null) {
-    req.flash('info', 'Please Enter a Name and Select a Language !')
-  } else {
-    greetings.logic(language, Name);
-  }
-
-  res.redirect('/');
-
+    res.redirect('/');
 });
 
 app.post('/reset', function (req, res) {
     greetings.reset();
-   req.flash('info', 'Everything has been reseted');
+    req.flash('info', 'Everything has been cleared');
     res.redirect('/');
 });
 
