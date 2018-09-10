@@ -49,7 +49,5 @@
          logic,
          myCounter,
          reset
-
      }
-
  }
