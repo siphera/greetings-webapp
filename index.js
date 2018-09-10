@@ -4,6 +4,16 @@ const bodyParser = require('body-parser');
 const greet = require('./greetings')
 const flash = require('express-flash');
 const session = require('express-session');
+const pg = require("pg");
+const Pool = pg.Pool;
+
+const pool = new Pool ({
+    database: 'greet',
+    user: 'coder',
+    host: 'localhost',
+    password: 'coder123',
+    port: 5432
+})
 
 //instantiate instance
 const app = express();
